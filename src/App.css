@@ -1,0 +1,78 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #222;
+  height: 180px;
+  width: 100%;
+  padding: 0;
+  color: white;
+  
+  background-image: url("images/dev-background.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 30% -100%;
+  background-size: contain;
+}
+
+.App-header-overlay {
+  height: 140px;
+  width: 100%;
+
+  padding-top: 40px;
+  
+  background-color: rgba( 127, 127, 127, 0.75);
+}
+
+
+.Curr {
+}
+
+.Curr-tablets {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  text-align: left;
+}
+
+.Curr-topic {
+  width: 35vw;
+}
+
+.topic-header {
+  margin-left: 30px;
+}
+
+.topic-body {
+  margin-left: 30px;
+  border-left: 1px solid gray;
+  padding-left: 5px;
+
+  font-size: 0.875em;
+}
+
+.Curr-code {
+  width: 60vw;
+  min-width: 300px;
+}
+
+.Curr-topic span {
+  line-height: 24px;
+  vertical-align: top;
+  margin-left: 1em;
+}
+
+.Curr-learn-more {
+  margin: 20px 0 40px 0;
+}
+
+.Curr-learn-more hr {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30vw;
+  margin: 0 10px;
+
+  background-color: lightgray;
+}
