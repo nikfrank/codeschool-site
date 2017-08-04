@@ -9,7 +9,7 @@
   padding: 0;
   color: white;
   
-  background-image: url("images/dev-background.jpeg");
+  background-image: url("../images/dev-background.jpeg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 30% -100%;
@@ -17,10 +17,10 @@
 }
 
 .App-header-overlay {
-  height: 140px;
+  height: 120px;
   width: 100%;
 
-  padding-top: 40px;
+  padding-top: 60px;
   
   background-color: rgba( 127, 127, 127, 0.75);
 }
@@ -30,6 +30,8 @@
 }
 
 .Curr-tablets {
+  margin-left: 10px;
+  
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -39,6 +41,13 @@
 
 .Curr-topic {
   width: 35vw;
+  margin-left: calc( 10vw - 70px );
+}
+
+@media (max-width: 700px) {
+  .Curr-topic {
+    margin-left: 0;
+  } 
 }
 
 .topic-header {
@@ -46,7 +55,7 @@
 }
 
 .topic-body {
-  margin-left: 30px;
+  margin-left: 0px;
   border-left: 1px solid gray;
   padding-left: 5px;
 
@@ -54,11 +63,18 @@
 }
 
 .Curr-code {
-  width: 60vw;
-  min-width: 300px;
+  width: 50vw;
+  min-width: 400px;
+  margin-left: calc( 10vw - 70px );
 }
 
-.Curr-topic span {
+@media (max-width: 700px) {
+  .Curr-code {
+    margin-left: 0;
+  } 
+}
+
+.Curr-topic span.topic-title {
   line-height: 24px;
   vertical-align: top;
   margin-left: 1em;
