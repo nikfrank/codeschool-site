@@ -40,6 +40,9 @@ cd js-course
 npm install
 npm run test`;
 
+// from rawgit.com
+const mmtCourseIntructionsUrl = 'https://rawgit.com/nikfrank/learn-tahini-mastermind/master/docs/instructions.md';
+
 
 class Curriculum extends Component {
   render() {
@@ -89,14 +92,6 @@ class Curriculum extends Component {
         <div className="Curr">
           <div className="Curr-tablets">
             
-            <div className="Curr-code">
-
-              <Codefile filename="test.js"
-                        code={jsTestExample}
-                        syntaxStyle={hopscotch}/>
-              
-            </div>
-
             <div className="Curr-topic">
               <div className="topic-header">
                 <NumberCircle number={2}/>
@@ -117,6 +112,13 @@ class Curriculum extends Component {
               </div>    
             </div>
 
+            <div className="Curr-code">
+
+              <Codefile filename="test.js"
+                        code={jsTestExample}
+                        syntaxStyle={hopscotch}/>
+              
+            </div>
             
           </div>
         </div>
