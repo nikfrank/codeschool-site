@@ -1,5 +1,6 @@
-import LoadCurriculum from './LoadCurriculum';
+import LoadCurriculum, { LoadCurriculumMock } from './LoadCurriculum';
 
 export default {
   LoadCurriculum,
+  LoadCurriculumMock,
 };
