@@ -5,6 +5,16 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 import hopscotch from 'react-syntax-highlighter/dist/styles/hopscotch'; 
 
+import { fromJS } from 'immutable';
+
+import {
+  bootApp,
+  networkMiddleware,
+} from 'tahini';
+
+import networkHandlers from '../network/';
+
+
 import NumberCircle from '../pure/NumberCircle';
 import Codefile from '../pure/Codefile';
 
@@ -45,7 +55,42 @@ const mmtCourseIntructionsUrl = 'https://rawgit.com/nikfrank/learn-tahini-master
 
 
 class Curriculum extends Component {
+  static get namespace(){
+    return 'curriculum';
+  }
+
+  static get actions(){
+    return {
+      loadCurriculum: (courseName) => ({
+        network: {
+          handler: 'LoadCurriculum',
+          payload: { courseName },
+          nextAction: { type: 'setCurriculum' },
+          errAction: { type: 'setCurriculum' },
+        },
+      }),
+    };
+  }
+
+  static get reducer(){
+    return {
+      setCurriculum: (state, { payload }) =>
+        state.set('curriculum', payload),
+    };
+  }
+
+  static get initState(){
+    return fromJS({
+      curriculum: {},
+    });
+  }
+
+  componentDidMount(){
+    this.props.loadCurriculum();
+  }
+  
   render() {
+    console.log(this.props.subState.toJS());
     return (
       <div className="Curriculum">
         <Paper style={heroSectionStyle} zDepth={3}>
@@ -162,4 +207,6 @@ class Curriculum extends Component {
   }
 }
 
-export default Curriculum;
+const tahiniApp = bootApp( [ networkMiddleware( networkHandlers ) ] );
+
+export default tahiniApp.getDevice( Curriculum, [], Curriculum.initState );

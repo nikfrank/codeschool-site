@@ -15,12 +15,15 @@ import {
 
 import jsSyntax from 'react-syntax-highlighter/dist/languages/javascript';
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import Layout from './pure/Layout';
 
 import Home from './Home';
 import Curriculum from './Curriculum';
 
+
+injectTapEventPlugin();
 
 // boot light dist version of highlighter
 registerLanguage('javascript', jsSyntax);
