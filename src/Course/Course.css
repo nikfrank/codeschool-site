@@ -13,8 +13,8 @@
 }
 
 .Course-topic {
-  width: 35vw;
-  margin-left: calc( 10vw - 70px );
+  width: 32%;
+  margin-left: 0;
 }
 
 @media (max-width: 700px) {
@@ -37,7 +37,7 @@
 
 .Course-code {
   width: 50vw;
-  min-width: 400px;
+  min-width: 410px;
   margin-left: calc( 10vw - 70px );
 }
 

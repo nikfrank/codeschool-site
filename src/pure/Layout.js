@@ -14,6 +14,8 @@ import Code from 'material-ui/svg-icons/action/code';
 
 import { Link } from 'react-router-dom';
 
+const DRAWER_WIDTH = 160;
+
 const HomeLink = (
   <Link to="/">
     <IconButton><Code /></IconButton>
@@ -52,14 +54,14 @@ export default class Layout extends Component {
   
   render(){
     return (
-      <div style={{ marginLeft: (this.state.width > 800 ? 200 : 0) }}>
+      <div style={{ marginLeft: (this.state.width > 800 ? DRAWER_WIDTH : 0) }}>
         <AppBar
           style={{ position: 'fixed', top: 0 }}
           title="{ codeSchool } IL"
           iconElementLeft={HomeLink}
           iconElementRight={<IconButton><Hamburger onTouchTap={this.toggleDrawer}/></IconButton>} />
 
-        <Drawer open={this.state.open || (this.state.width > 800)} width={200}>
+        <Drawer open={this.state.open || (this.state.width > 800)} width={DRAWER_WIDTH}>
           <MenuItem>Home</MenuItem>
 
           <Divider/>
