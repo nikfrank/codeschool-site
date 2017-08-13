@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 
+import ReactMd from 'react-markdown';
+
 import hopscotch from 'react-syntax-highlighter/dist/styles/hopscotch'; 
 
 import { fromJS } from 'immutable';
@@ -71,11 +73,6 @@ console.log(branches);
     
     return (
       <div className="Curriculum">
-        <Paper style={heroSectionStyle} zDepth={3}>
-          <p className="App-intro">
-            Curriculum in Fullstack Test Driven <code>JavaScript</code>
-          </p>
-        </Paper>
 
         {
           branches.map( (branch, i) => (
@@ -91,7 +88,7 @@ console.log(branches);
                         </span>
                       </div>
                       <div className="topic-body">
-                        { instructions }
+                        <ReactMd source={instructions}/>
                       </div>    
                     </div>
                     <div className="Curriculum-code">

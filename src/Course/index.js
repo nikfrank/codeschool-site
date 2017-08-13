@@ -86,9 +86,9 @@ class CourseLanding extends Component {
           </p>
         </Paper>
 
-        <div className="Curr">
-          <div className="Curr-tablets">
-            <div className="Curr-topic">
+        <div className="Course">
+          <div className="Course-tablets">
+            <div className="Course-topic">
               <div className="topic-header">
                 <NumberCircle number={1}/>
                 <span className="topic-title">
@@ -108,7 +108,7 @@ class CourseLanding extends Component {
               </div>    
             </div>
             
-            <div className="Curr-code">
+            <div className="Course-code">
               <Codefile filename="index.js"
                         code={jsCodeExample}
                         syntaxStyle={hopscotch}/>
@@ -121,10 +121,10 @@ class CourseLanding extends Component {
           </div>
         </div>
 
-        <div className="Curr">
-          <div className="Curr-tablets">
+        <div className="Course">
+          <div className="Course-tablets">
             
-            <div className="Curr-topic">
+            <div className="Course-topic">
               <div className="topic-header">
                 <NumberCircle number={2}/>
                 <span className="topic-title">
@@ -144,7 +144,7 @@ class CourseLanding extends Component {
               </div>    
             </div>
 
-            <div className="Curr-code">
+            <div className="Course-code">
 
               <Codefile filename="test.js"
                         code={jsTestExample}
@@ -156,9 +156,9 @@ class CourseLanding extends Component {
         </div>
 
 
-        <div className="Curr">
-          <div className="Curr-tablets">
-            <div className="Curr-topic">
+        <div className="Course">
+          <div className="Course-tablets">
+            <div className="Course-topic">
               <div className="topic-header">
                 <NumberCircle number={3}/>
                 <span className="topic-title">
@@ -178,7 +178,7 @@ class CourseLanding extends Component {
               </div>    
             </div>
             
-            <div className="Curr-code">
+            <div className="Course-code">
               <Codefile filename="./bash"
                         code={gitCodeExample}
                         syntaxStyle={hopscotch}/>

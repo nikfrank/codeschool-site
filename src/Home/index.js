@@ -22,23 +22,29 @@ import './Home.css';
 import hopscotch from 'react-syntax-highlighter/dist/styles/hopscotch'; 
 
 
-const jsCodeExample = `()=>{
+const jsCodeExample = `()=> {
   console.log('yo watup?');
 }`;
 
-const jsFnExample =
-  `export const americanizeFrench =
-  (word)=>
-    word.replace('é', 'e');`;
+const reactExample =
+  `export const class HomePage extends Component {
+  render(){
+    return (
+      <div>React is great eh!</div>
+    );
+  }
+};`;
 
-const jsTestExample =
-  `import { americanizeFrench } from './lib';
+const nodeExample =
+  `const app = require('express')();
 
-it('should take out those pesky accents!', ()=>{
-  const testWord = 'résumé';
-  const result = americanizeFrench( testWord );
+app.get('/', (req, res)=> {
+  res.json({ nm: 'hbu?' });
+});
 
-  expect( result ).toEqual( 'resume' );
+app.listen( process.env.PORT, ()=> {
+  console.log('Example app listening on '+
+               process.env.PORT);
 });`;
 
 
@@ -64,13 +70,13 @@ class Home extends Component {
         
         <Paper style={heroSectionStyle} zDepth={3}>
           <p className="App-intro">
-            Curriculum in Fullstack Test Driven <code>JavaScript</code>
+            Courseiculum in Fullstack Test Driven <code>JavaScript</code>
           </p>
         </Paper>
 
-        <div className="Curr">
-          <div className="Curr-tablets">
-            <div className="Curr-topic">
+        <div className="Course">
+          <div className="Course-tablets">
+            <div className="Course-topic">
               <div className="topic-body">
 
                 <Stepper activeStep={this.state.currentStep}
@@ -118,7 +124,7 @@ class Home extends Component {
               </div>    
             </div>
             
-            <div className="Curr-code">
+            <div className="Course-code">
               {
                 [
                   <Codefile filename="index.js"
@@ -126,18 +132,18 @@ class Home extends Component {
                             syntaxStyle={hopscotch}/>,
 
                   <Codefile filename="lib.js"
-                            code={jsFnExample}
+                            code={reactExample}
                             syntaxStyle={hopscotch}/>,
                   
                   <Codefile filename="test.js"
-                            code={jsTestExample}
+                            code={nodeExample}
                             syntaxStyle={hopscotch}/>,
                 ][this.state.currentStep]
               }
             </div>
           </div>
 
-          <div className="Curr-learn-more">
+          <div className="Course-learn-more">
             <hr/>
             <Link to="/course/blah">
               <RaisedButton label="Learn More" primary={true}/>
@@ -145,6 +151,15 @@ class Home extends Component {
             <hr/>
           </div>
         </div>
+
+        <footer style={{
+          width: '100%', height: 200, backgroundColor: 'gray', color: 'white',
+          display: 'flex', justifyContent: 'space-around',
+        }}>
+          <p>Company location</p>
+          <p>Links to stuff</p>
+          <p>Contact us or whatever</p>
+        </footer>
       </div>
     );
   }
