@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import Drawer from 'material-ui/Drawer';
 import Divider from 'material-ui/Divider';
 import AppBar from 'material-ui/AppBar';
@@ -23,8 +25,8 @@ const HomeLink = (
 );
 
 
-export default class Layout extends Component {
-
+class Layout extends Component {
+  
   state = {
     open: false,
     width: window.innerWidth,
@@ -50,7 +52,10 @@ export default class Layout extends Component {
     this.setState({ curricula: !this.state.curricula });
   }
 
-  
+  goto = (to)=> {
+    this.context.router.history.push( to );
+    this.setState({ open: false });
+  }
   
   render(){
     return (
@@ -62,7 +67,9 @@ export default class Layout extends Component {
           iconElementRight={<IconButton><Hamburger onTouchTap={this.toggleDrawer}/></IconButton>} />
 
         <Drawer open={this.state.open || (this.state.width > 800)} width={DRAWER_WIDTH}>
-          <MenuItem>Home</MenuItem>
+          <MenuItem onTouchTap={()=> this.goto('/')}>
+            Home
+          </MenuItem>
 
           <Divider/>
           <MenuItem onTouchTap={this.toggleCourses}>
@@ -72,8 +79,14 @@ export default class Layout extends Component {
           {
             !this.state.courses ? null : (
               <div>
-                <MenuItem style={{ paddingLeft: 9 }}>Course A</MenuItem>
-                <MenuItem style={{ paddingLeft: 9 }}>Course B</MenuItem>
+                <MenuItem style={{ paddingLeft: 9 }}
+                          onTouchTap={()=> this.goto('/course/js-tdd')}>
+                  Modern JavaScript
+                </MenuItem>
+                <MenuItem style={{ paddingLeft: 9 }}
+                          onTouchTap={()=> this.goto('/course/react')}>
+                  ReactJS Basics
+                </MenuItem>
               </div>
             )
           }
@@ -86,8 +99,14 @@ export default class Layout extends Component {
           {
             !this.state.curricula ? null : (
               <div>
-                <MenuItem style={{ paddingLeft: 9 }}>Curriculum A</MenuItem>
-                <MenuItem style={{ paddingLeft: 9 }}>Curriculum B</MenuItem>
+                <MenuItem style={{ paddingLeft: 9 }}
+                          onTouchTap={()=> this.goto('/curriculum/js-tdd')}>
+                  Modern JavaScript
+                </MenuItem>
+                <MenuItem style={{ paddingLeft: 9 }}
+                          onTouchTap={()=> this.goto('/curriculum/react')}>
+                  ReactJS Basics
+                </MenuItem>
               </div>
             )
           }
@@ -98,3 +117,15 @@ export default class Layout extends Component {
     );
   }
 };
+
+Layout.contextTypes = {
+  router: PropTypes.shape({
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+      replace: PropTypes.func.isRequired
+    }).isRequired,
+    staticContext: PropTypes.object
+  }).isRequired
+};
+
+export default Layout;
