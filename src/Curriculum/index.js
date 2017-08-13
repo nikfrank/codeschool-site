@@ -65,6 +65,7 @@ class Curriculum extends Component {
 
   componentDidMount(){
     this.props.loadCurriculum();
+    window.scrollTo(0, 0);
   }
   
   render() {

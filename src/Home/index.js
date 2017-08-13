@@ -62,6 +62,10 @@ class Home extends Component {
   setStep = (step)=>{
     this.setState({ currentStep: step });
   }
+
+  componentDidMount(){
+    window.scrollTo(0, 0);
+  }
   
   render() {
     return (
