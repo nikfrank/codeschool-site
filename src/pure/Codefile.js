@@ -19,13 +19,13 @@ const filenameStyle = {
   fontStyle: 'italic',
 };
 
-export default ({ filename, code, syntaxStyle })=> (
+export default ({ filename, code, syntaxStyle, language='js' })=> (
   <div className="code-file">
     <div style={filenameStyle}>
       { filename }
       <hr style={hrStyle}/>
     </div>
-    <SyntaxHighlighter language='javascript'
+    <SyntaxHighlighter language={language}
                        customStyle={codeblockStyle}
                        showLineNumbers={true}
                        style={syntaxStyle}>

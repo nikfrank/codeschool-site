@@ -14,6 +14,7 @@ import {
 } from 'react-syntax-highlighter/dist/light';
 
 import jsSyntax from 'react-syntax-highlighter/dist/languages/javascript';
+import bashSyntax from 'react-syntax-highlighter/dist/languages/bash';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -21,12 +22,14 @@ import Layout from './pure/Layout';
 
 import Home from './Home';
 import Curriculum from './Curriculum';
+import Course from './Course';
 
 
 injectTapEventPlugin();
 
 // boot light dist version of highlighter
-registerLanguage('javascript', jsSyntax);
+registerLanguage('js', jsSyntax);
+registerLanguage('bash', bashSyntax);
 
 
 ReactDOM.render(
@@ -35,7 +38,8 @@ ReactDOM.render(
       <Layout>
         <Switch>
           <Route path='/' exact component={Home}/>
-          <Route path='/course/:course' exact component={Curriculum}/>
+          <Route path='/curriculum/:course' exact component={Curriculum}/>
+          <Route path='/course/:course' exact component={Course}/>
         </Switch>
       </Layout>
     </Router>
