@@ -22,9 +22,14 @@ import './Home.css';
 import hopscotch from 'react-syntax-highlighter/dist/styles/hopscotch'; 
 
 
-const jsCodeExample = `()=> {
+const jsCodeExample = `const yoWatup = ()=> {
   console.log('yo watup?');
-}`;
+  return 'yo watup?';
+});`;
+
+const jsTestExample = `it('tests its code', ()=> {
+  expect( yoWatup() ).toEqual( 'yo watup?' );
+};`
 
 const reactExample =
   `export const class HomePage extends Component {
@@ -63,18 +68,36 @@ class Home extends Component {
       <div className="App">
         <div className="App-header">
           <div className="App-header-overlay">
-            <h2>Welcome to React</h2>
-            <p> look how cool this course is nu</p>
+            <h2> look how cool this course is nu</h2>
+            
+            <p> Israel's something leading codeSchool modern web dev </p>
+            <p> for coder, by coders, not some corporate shill! </p>
           </div>
         </div>
-        
+
         <Paper style={heroSectionStyle} zDepth={3}>
-          <p className="App-intro">
-            Courseiculum in Fullstack Test Driven <code>JavaScript</code>
+          <p>
+            Homegrown Israeli hi-tech talent acceleration
           </p>
         </Paper>
 
-        <div className="Course">
+        <article className="Above-the-fold">
+          <p>Section about how this is the only real place to learn</p>
+          <p> look how many hashtags we have ####### </p>
+          <p> look how many hashtags we have ####### </p>
+          <p> look how many hashtags we have ####### </p>
+          <p> Maybe a youtube video here eh? </p>
+          <p> look how many hashtags we have ####### </p>
+          <p> look how many hashtags we have ####### </p>
+        </article>
+        
+        <Paper style={heroSectionStyle} zDepth={3}>
+          <p className="App-intro">
+            Curriculum in Fullstack Test Driven <code>JavaScript</code>
+          </p>
+        </Paper>
+
+        <div className="Landing-Course">
           <div className="Course-tablets">
             <div className="Course-topic">
               <div className="topic-body">
@@ -127,9 +150,14 @@ class Home extends Component {
             <div className="Course-code">
               {
                 [
-                  <Codefile filename="index.js"
-                            code={jsCodeExample}
-                            syntaxStyle={hopscotch}/>,
+                  <div>
+                    <Codefile filename="index.js"
+                              code={jsCodeExample}
+                              syntaxStyle={hopscotch}/>
+                    <Codefile filename="test.js"
+                              code={jsTestExample}
+                              syntaxStyle={hopscotch}/>
+                  </div>,
 
                   <Codefile filename="lib.js"
                             code={reactExample}
@@ -140,27 +168,27 @@ class Home extends Component {
                             syntaxStyle={hopscotch}/>,
                 ][this.state.currentStep]
               }
+                  </div>
+            </div>
+
+            <div className="Course-learn-more">
+              <hr/>
+              <Link to="/course/blah">
+                <RaisedButton label="Learn More" primary={true}/>
+              </Link>
+              <hr/>
             </div>
           </div>
 
-          <div className="Course-learn-more">
-            <hr/>
-            <Link to="/course/blah">
-              <RaisedButton label="Learn More" primary={true}/>
-            </Link>
-            <hr/>
-          </div>
+          <footer style={{
+            width: '100%', height: 200, backgroundColor: 'gray', color: 'white',
+            display: 'flex', justifyContent: 'space-around',
+          }}>
+            <p>Company location</p>
+            <p>Links to stuff</p>
+            <p>Contact us or whatever</p>
+          </footer>
         </div>
-
-        <footer style={{
-          width: '100%', height: 200, backgroundColor: 'gray', color: 'white',
-          display: 'flex', justifyContent: 'space-around',
-        }}>
-          <p>Company location</p>
-          <p>Links to stuff</p>
-          <p>Contact us or whatever</p>
-        </footer>
-      </div>
     );
   }
 }

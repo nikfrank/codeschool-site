@@ -27,7 +27,7 @@ export default ({ filename, code, syntaxStyle, language='js' })=> (
     </div>
     <SyntaxHighlighter language={language}
                        customStyle={codeblockStyle}
-                       showLineNumbers={true}
+                       showLineNumbers={language !== 'bash'}
                        style={syntaxStyle}>
       {code}
     </SyntaxHighlighter>

@@ -14,7 +14,7 @@ export default text => {
       
       const codeLang = code.slice( 0, firstLine );
       
-      const codeBody = code.slice( firstLine + 1, -3 );
+      const codeBody = code.slice( firstLine + 1 );
       
       return { filename, codeLang, codeBody, instructions, title };
     })

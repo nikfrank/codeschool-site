@@ -1,3 +1,7 @@
 .Curriculum {
   padding: 40px 10px 0;
 }
+
+.topic-title {
+  line-height: 1.5;
+}

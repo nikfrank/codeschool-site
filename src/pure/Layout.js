@@ -21,7 +21,7 @@ export default ({ children })=> (
   <div>
     <AppBar
         style={{ position: 'fixed', top: 0 }}
-        title="codeschool"
+        title="{ codeSchool } IL"
         iconElementLeft={HomeLink}
         iconElementRight={<div></div>}
     />

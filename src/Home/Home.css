@@ -4,7 +4,7 @@
 
 .App-header {
   background-color: #222;
-  height: 180px;
+  height: 210px;
   width: 100%;
   padding: 0;
   color: white;
@@ -17,10 +17,23 @@
 }
 
 .App-header-overlay {
-  height: 120px;
+  height: 150px;
   width: 100%;
 
   padding-top: 60px;
   
   background-color: rgba( 127, 127, 127, 0.75);
+}
+
+.Landing-Course {
+  padding-top: 10px;
+}
+
+article.Above-the-fold {
+  background-color: rgba( 1, 1, 1, 0.0625);
+
+  max-width: 80vw;
+  margin: auto;
+  
+  margin-bottom: 50px;
 }

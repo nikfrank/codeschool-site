@@ -39,7 +39,7 @@ class Curriculum extends Component {
     return {
       loadCurriculum: (courseName) => ({
         network: {
-          handler: 'LoadCurriculumMock',
+          handler: 'LoadCurriculum',
           payload: { courseName },
           nextAction: { type: 'setCurriculum' },
           errAction: { type: 'setCurriculum' },
@@ -69,7 +69,6 @@ class Curriculum extends Component {
   
   render() {
     const branches = this.props.subState.getIn(['curriculum', 'branches'], fromJS([])).toJS();
-console.log(branches);
     
     return (
       <div className="Curriculum">
