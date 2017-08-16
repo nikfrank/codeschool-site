@@ -39,7 +39,7 @@ class Curriculum extends Component {
     return {
       loadCurriculum: (courseName) => ({
         network: {
-          handler: 'LoadCurriculumMock',
+          handler: 'LoadCurriculum',
           payload: { courseName },
           nextAction: { type: 'setCurriculum' },
           errAction: { type: 'setCurriculum' },
