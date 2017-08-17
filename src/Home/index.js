@@ -196,9 +196,9 @@ class Home extends Component {
             width: '100%', height: 200, backgroundColor: 'gray', color: 'white',
             display: 'flex', justifyContent: 'space-around',
           }}>
-            <p>Company location</p>
-            <p>Links to stuff</p>
-            <p>Contact us or whatever</p>
+            <p>Company Location</p>
+            <p>Links</p>
+            <p><a>Contact us</a></p>
           </footer>
         </div>
     );

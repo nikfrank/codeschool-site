@@ -80,11 +80,11 @@ class Layout extends Component {
             !this.state.courses ? null : (
               <div>
                 <MenuItem style={{ paddingLeft: 9 }}
-                          onTouchTap={()=> this.goto('/course/js-tdd')}>
-                  Modern JavaScript
+                          onTouchTap={()=> this.goto('/curriculum/js-tdd')}>
+                  TDD JavaScript
                 </MenuItem>
                 <MenuItem style={{ paddingLeft: 9 }}
-                          onTouchTap={()=> this.goto('/course/react')}>
+                          onTouchTap={()=> this.goto('/curriculum/react')}>
                   ReactJS Basics
                 </MenuItem>
               </div>
@@ -101,7 +101,7 @@ class Layout extends Component {
               <div>
                 <MenuItem style={{ paddingLeft: 9 }}
                           onTouchTap={()=> this.goto('/curriculum/js-tdd')}>
-                  Modern JavaScript
+                  TDD JavaScript
                 </MenuItem>
                 <MenuItem style={{ paddingLeft: 9 }}
                           onTouchTap={()=> this.goto('/curriculum/react')}>
