@@ -75,7 +75,7 @@ class Home extends Component {
             <h2> look how cool this course is nu</h2>
             
             <p> Israel's something leading codeSchool modern web dev </p>
-            <p> for coder, by coders, not some corporate shill eh! </p>
+            <p> for us by us, not some corporate shill eh! </p>
           </div>
         </div>
 
