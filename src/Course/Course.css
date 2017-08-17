@@ -19,6 +19,7 @@
 
 @media (max-width: 700px) {
   .Course-topic {
+    width: 80%;
     margin-left: 0;
   } 
 }
@@ -60,7 +61,7 @@
 .Course-learn-more hr {
   display: inline-block;
   vertical-align: middle;
-  width: 30vw;
+  width: 18vw;
   margin: 0 10px;
 
   background-color: lightgray;

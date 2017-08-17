@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  overflow-x: hidden;
 }
 
 .App-header {
@@ -36,4 +37,17 @@ article.Above-the-fold {
   margin: auto;
   
   margin-bottom: 50px;
+
+  display: flex;
+  justify-content: space-around;
+
+  flex-wrap: wrap;
 }
+
+
+article .right img {
+  width: 300px;
+  height: auto;
+  padding: 5px;
+}
+

@@ -21,6 +21,8 @@ import './Home.css';
 
 import hopscotch from 'react-syntax-highlighter/dist/styles/hopscotch'; 
 
+import HomeImg from '../images/home-code.png';
+
 
 const jsCodeExample = `const yoWatup = ()=> {
   console.log('yo watup?');
@@ -72,27 +74,33 @@ class Home extends Component {
       <div className="App">
         <div className="App-header">
           <div className="App-header-overlay">
-            <h2> look how cool this course is nu</h2>
+            <h2> Homegrown Israeli Hi-tech Talent </h2>
             
-            <p> Israel's something leading codeSchool modern web dev </p>
-            <p> for us by us, not some corporate shill eh! </p>
+            <p> Learn to build fullstack JavaScript web apps </p>
+            <p> Focus on practical big picture programming skills </p>
           </div>
         </div>
 
         <Paper style={heroSectionStyle} zDepth={3}>
-          <p>
-            Homegrown Israeli hi-tech talent acceleration
-          </p>
+          <p><b>
+            Israel's only Ground-to-Cloud code school
+          </b></p>
         </Paper>
 
         <article className="Above-the-fold">
-          <p>Section about how this is the only real place to learn</p>
-          <p> look how many hashtags we have ####### </p>
-          <p> look how many hashtags we have ####### </p>
-          <p> look how many hashtags we have ####### </p>
-          <p> Maybe a youtube video here eh? </p>
-          <p> look how many hashtags we have ####### </p>
-          <p> look how many hashtags we have ####### </p>
+          <div className="left">
+            <p><b>
+              Think in JavaScript - Build in JavaScript
+            </b></p>
+            <p> Build highly interactive websites </p>
+            <p> Or deploy your app to the app store! </p>
+            <p> Learn to build servers for your online apps </p>
+            <p> Or architect a cutting edge Cloud solution! </p>
+            <p> Focus on the best practices for any project </p>
+          </div>
+          <div className="right">
+            <img src={HomeImg}/>
+          </div>
         </article>
         
         <Paper style={heroSectionStyle} zDepth={3}>
@@ -178,7 +186,7 @@ class Home extends Component {
             <div className="Course-learn-more">
               <hr/>
               <Link to="/course/blah">
-                <RaisedButton label="Learn More" primary={true}/>
+                <RaisedButton label="View Available Courses" primary={true}/>
               </Link>
               <hr/>
             </div>
