@@ -61,16 +61,18 @@ class Layout extends Component {
     return (
       <div style={{ marginLeft: (this.state.width > 800 ? DRAWER_WIDTH : 0) }}>
         <AppBar
-          style={{ position: 'fixed', top: 0 }}
-          title="{ codeSchool } IL"
-          iconElementLeft={HomeLink}
-          iconElementRight={<IconButton><Hamburger onTouchTap={this.toggleDrawer}/></IconButton>} />
+            style={{ position: 'fixed', top: 0 }}
+            title="{ codeSchool } IL"
+            iconElementLeft={HomeLink}
+            iconElementRight={<IconButton><Hamburger onTouchTap={this.toggleDrawer}/></IconButton>} />
 
-        <Drawer open={this.state.open || (this.state.width > 800)} width={DRAWER_WIDTH}>
+        <Drawer
+            open={this.state.open || (this.state.width > 800)}
+            width={DRAWER_WIDTH}>
           <MenuItem onTouchTap={()=> this.goto('/')}>
             Home
           </MenuItem>
-
+          
           <Divider/>
           <MenuItem onTouchTap={this.toggleCourses}>
             Courses
@@ -91,25 +93,6 @@ class Layout extends Component {
             )
           }
 
-          <Divider/>
-          <MenuItem onTouchTap={this.toggleCurricula}>
-            Curricula
-            <IconButton style={{float:'right'}}><Hamburger /></IconButton>
-          </MenuItem>
-          {
-            !this.state.curricula ? null : (
-              <div>
-                <MenuItem style={{ paddingLeft: 9 }}
-                          onTouchTap={()=> this.goto('/curriculum/js-tdd')}>
-                  TDD JavaScript
-                </MenuItem>
-                <MenuItem style={{ paddingLeft: 9 }}
-                          onTouchTap={()=> this.goto('/curriculum/react')}>
-                  ReactJS Basics
-                </MenuItem>
-              </div>
-            )
-          }
         </Drawer>
         
         { this.props.children }

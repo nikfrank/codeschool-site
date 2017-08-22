@@ -55,6 +55,10 @@ app.listen( process.env.PORT, ()=> {
 });`;
 
 
+const mapLink = `https://www.google.co.il/maps/place/Dizengoff+St+202,+Tel+Aviv-Yafo/@32.086575,34.7727918,17z/data=!3m1!4b1!4m5!3m4!1s0x151d4b89c3bb32c3:0xd1f5765dc6e7458!8m2!3d32.086575!4d34.7749858?hl=en`;
+
+const emailLink = 'mailto:benlevfrank+codeschool@gmail.com?subject=Inquiry About CodeSchoolIL';
+
 
 class Home extends Component {
   state = {
@@ -81,7 +85,7 @@ class Home extends Component {
           </div>
         </div>
 
-        <Paper style={heroSectionStyle} zDepth={3}>
+        <Paper style={heroSectionStyle} zDepth={2}>
           <p><b>
             Israel's only Ground-to-Cloud code school
           </b></p>
@@ -103,7 +107,7 @@ class Home extends Component {
           </div>
         </article>
         
-        <Paper style={heroSectionStyle} zDepth={3}>
+        <Paper style={heroSectionStyle} zDepth={2}>
           <p className="App-intro">
             Curriculum in Fullstack Test Driven <code>JavaScript</code>
           </p>
@@ -185,7 +189,7 @@ class Home extends Component {
 
             <div className="Course-learn-more">
               <hr/>
-              <Link to="/course/blah">
+              <Link to="/curriculum/react">
                 <RaisedButton label="View Available Courses" primary={true}/>
               </Link>
               <hr/>
@@ -196,9 +200,14 @@ class Home extends Component {
             width: '100%', height: 200, backgroundColor: 'gray', color: 'white',
             display: 'flex', justifyContent: 'space-around',
           }}>
-            <p>Company Location</p>
-            <p>Links</p>
-            <p><a>Contact us</a></p>
+            <p>
+              <a target="_blank"
+                 href={mapLink}>
+                Company Location
+              </a>
+            </p>
+            <p>&nbsp;</p>
+            <p><a target="_blank" href={emailLink}>Contact us</a></p>
           </footer>
         </div>
     );
