@@ -3,7 +3,6 @@ export default text => {
   const branches = text.split('## branch').slice(1);
   
   return branches.map( (branch, bi) => ({
-    title: 'branch title',
     steps: branch.split('### solution-step').map( (step, si) => {
       
       const [ title, content ] = step.split('## instructions');
