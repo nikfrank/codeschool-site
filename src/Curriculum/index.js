@@ -45,6 +45,11 @@ class Curriculum extends Component {
           errAction: { type: 'setCurriculum' },
         },
       }),
+
+      toggleStep: (bi, si)=> ({
+        type: 'toggleStep',
+        payload: { bi, si },
+      }),
     };
   }
 
@@ -52,6 +57,10 @@ class Curriculum extends Component {
     return {
       setCurriculum: (state, { payload }) =>
         state.setIn(['curriculum', 'branches'], fromJS(payload)),
+
+      toggleStep: (state, { payload: { bi, si } }) =>
+        state.updateIn(['curriculum', 'branches', bi,
+                        'steps', si, 'open'], o=> !o),
     };
   }
 
@@ -70,34 +79,48 @@ class Curriculum extends Component {
   
   render() {
     const branches = this.props.subState.getIn(['curriculum', 'branches'], fromJS([])).toJS();
+
+    const toggleStep = this.props.toggleStep;
     
     return (
       <div className="Curriculum">
 
         {
-          branches.map( (branch, i) => (
-            <div className="Curriculum" key={i}>
-              <NumberCircle number={i}/>
+          branches.map( (branch, bi) => (
+            <div className="Curriculum" key={bi}>
+              <NumberCircle number={bi}/>
               {
-                branch.steps.map( ({ filename, codeLang, codeBody, instructions, title }, si) => (
+                branch.steps.map( ({ filename, codeLang, codeBody, instructions, title, open }, si) => (
                   <div className="Curriculum-tablets" key={si}>
                     <div className="Curriculum-topic">
-                      <div className="topic-header">
+                      <div className="topic-header"
+                           onClick={()=> toggleStep(bi, si)}>
                         <span className="topic-title">
                           { title }
                         </span>
                       </div>
-                      <div className="topic-body">
-                        <ReactMd source={instructions}/>
-                      </div>    
+                      {
+                        !open ? null :
+                        <div className="topic-body">
+                          <ReactMd source={instructions}/>
+                        </div>
+                      }
                     </div>
-                    <div className="Curriculum-code">
-                      <Codefile filename={filename}
-                                code={codeBody}
-                                language={codeLang}
-                                syntaxStyle={hopscotch}/>
 
-                    </div>
+                    {
+                      !open ? null :
+                      <div className="Curriculum-code">
+                        {
+                          codeBody ? (
+                            <Codefile filename={filename}
+                                      code={codeBody}
+                                      language={codeLang}
+                                      syntaxStyle={hopscotch}/>
+                          ) : null
+                        }
+
+                      </div>
+                    }
                   </div>
                 ) )
               }
